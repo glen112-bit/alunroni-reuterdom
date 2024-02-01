@@ -1,8 +1,9 @@
 import styles from './Padron.module.scss';
 import { Outlet } from 'react-router-dom';
 import stylesTema from '../../styles/Tema.module.scss';
+import React from 'react';
 
-export default function Padron() {
+export default function Padron({ children }: {children?: React.ReactNode}) {
   return (
     <>
       <header className={styles.header}>
@@ -10,6 +11,7 @@ export default function Padron() {
       </header>
       <div className={stylesTema.container}>
         <Outlet />
+        { children }
       </div>
     </>
   );
